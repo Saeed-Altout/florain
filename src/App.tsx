@@ -1,10 +1,12 @@
 import { Suspense } from "react";
-import { Route, Routes } from "react-router-dom";
+import { useRoutes } from "react-router-dom";
 
 import { routes } from "./config/routes";
 import Loading from "./pages/Loading/Loading";
 
 export default function App() {
+  const element = useRoutes(routes);
+
   return (
     <Suspense fallback={<Loading />}>
       <div className="h-full relative overflow-hidden">
@@ -14,19 +16,7 @@ export default function App() {
           alt="bg-platform"
           className="w-full h-full absolute top-0 left-0 object-cover mix-blend-multiply"
         />
-        <Routes>
-          {routes.map(({ path, element, children }) => (
-            <Route key={path} path={path} element={element}>
-              {children?.map(({ path: childPath, element: childElement }) => (
-                <Route
-                  key={childPath}
-                  path={childPath}
-                  element={childElement}
-                />
-              ))}
-            </Route>
-          ))}
-        </Routes>
+        {element}
       </div>
     </Suspense>
   );
