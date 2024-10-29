@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import { useRoutes } from "react-router-dom";
 
 import { routes } from "./config/routes";
-import Loading from "./pages/Loading/Loading";
+import Loading from "./pages/Dashboard/Loading/Loading";
 
 export default function App() {
   const element = useRoutes(routes);

@@ -1,21 +1,29 @@
+// Dashboard routes
 import DashboardLayout from "../layouts/DashboardLayout";
-
-import Home from "../pages/Home/home";
-
 import Dashboard from "../pages/Dashboard/Dashboard";
-import Academy from "../pages/Academy/Academy";
-import Analysis from "../pages/Analysis/Analysis";
-import FreeHomes from "../pages/FreeHomes/FreeHomes";
-import NewsFeed from "../pages/NewsFeed/NewsFeed";
+import Academy from "../pages/Dashboard/Academy/Academy";
+import Analysis from "../pages/Dashboard/Analysis/Analysis";
+import FreeHomes from "../pages/Dashboard/FreeHomes/FreeHomes";
+import NewsFeed from "../pages/Dashboard/NewsFeed/NewsFeed";
 
-import Profile from "../pages/profile/Profile";
-import Details from "../pages/profile/Details";
-import Settings from "../pages/profile/Settings";
+import Profile from "../pages/Dashboard/profile/Profile";
+import Details from "../pages/Dashboard/profile/Details/Details";
+import Settings from "../pages/Dashboard/profile/Settings/Settings";
+
+// Root routes
+import RootLayout from "../layouts/RootLayout";
+import Home from "../pages/Root/Home/home";
+
+// Auth routes
+import AuthLayout from "../layouts/AuthLayout";
+import Login from "../pages/Auth/Login/Login";
+import Register from "../pages/Auth/Register/Register";
 
 export const routes = [
   {
     path: "/",
-    element: <Home />,
+    element: <RootLayout />,
+    children: [{ path: "", element: <Home /> }],
   },
   {
     path: "/dashboard",
@@ -34,6 +42,14 @@ export const routes = [
           { path: "settings", element: <Settings /> },
         ],
       },
+    ],
+  },
+  {
+    path: "/auth",
+    element: <AuthLayout />,
+    children: [
+      { path: "login", element: <Login /> },
+      { path: "register", element: <Register /> },
     ],
   },
 ];

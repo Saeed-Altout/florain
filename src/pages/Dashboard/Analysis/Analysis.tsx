@@ -1,4 +1,4 @@
-import { RedirectButton } from "../../components/ui/RedirectButton";
+import { RedirectButton } from "../../../components/ui/RedirectButton";
 
 export default function Analysis() {
   return (

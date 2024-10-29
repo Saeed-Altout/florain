@@ -1,8 +1,8 @@
-import { Carousel } from "../../components/ui/Carousel";
-import { RedirectButton } from "../../components/ui/RedirectButton";
-import { UploadButton } from "../../components/ui/UploadButton";
+import { Carousel } from "../../../components/ui/Carousel";
+import { RedirectButton } from "../../../components/ui/RedirectButton";
+import { UploadButton } from "../../../components/ui/UploadButton";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { countries, episodes, news } from "../../constants";
+import { countries, episodes, news } from "../../../constants";
 import { Navigation } from "swiper/modules";
 import { useState } from "react";
 import { FaChevronDown } from "react-icons/fa";
